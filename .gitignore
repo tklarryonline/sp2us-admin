@@ -14,7 +14,16 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
-
-# Ignore the project's log files
 libpeerconnection.log
 npm-debug.log
+
+# Ignore other unneeded files
+database.yml
+doc/
+*.swp
+*~
+.project
+.DS_Store
+.idea
+.secret
+
