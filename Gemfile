@@ -9,6 +9,13 @@ gem 'rails', '4.0.0'
 # Development
 group :development do
     gem 'sqlite3'
+    gem 'rspec-rails'
+end
+
+# Test gem group
+group :test do
+    gem 'selenium-webdriver'
+    gem 'capybara'
 end
 
 # Use SCSS for stylesheets

@@ -9,4 +9,20 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Sp2usMgmt::Application.config.secret_key_base = '9a684eafeefb9f5dfeb2e7407c291f3d42dd402f742b296473a74c6f65ef20eb4d3ea0042ebdea2e4bce3224c03e77c2ef465018e6bd307b1d062ed46d2b1283'
+require 'securerandom'
+
+def secure_token
+    token_file = Rails.root.join('.secret')
+    if File.exist?(token_file)
+        # Use the existing token
+        File.read(token_file).chomp
+    else
+        # Generate a new token and store it in token_file
+        token = SecureRandom.hex(64)
+        File.write(token_file, token)
+        token
+    end
+end
+
+Sp2usMgmt::Application.config.secret_key_base = secure_token
+
