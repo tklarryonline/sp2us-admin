@@ -7,15 +7,20 @@ ruby "1.9.3"
 gem 'rails', '4.0.0'
 
 # Development
-group :development do
-    gem 'sqlite3'
-    gem 'rspec-rails'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'guard-rspec'
+  gem 'spork-rails'
+  gem 'guard-spork'
+  gem 'childprocess'
 end
 
 # Test gem group
 group :test do
-    gem 'selenium-webdriver'
-    gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'libnotify'
 end
 
 # Use SCSS for stylesheets
@@ -59,14 +64,14 @@ gem 'haml'
 
 # Gems group for production env
 group :production do
-    gem 'pg'
-    gem 'rails_12factor'
+  gem 'pg'
+  gem 'rails_12factor'
 
-    # Use New Relic to monitor performance
-    gem 'newrelic_rpm'
+  # Use New Relic to monitor performance
+  gem 'newrelic_rpm'
 end
 
 group :doc do
-    # bundle exec rake doc:rails generates the API under doc/api.
-    gem 'sdoc', require: false
+  # bundle exec rake doc:rails generates the API under doc/api.
+  gem 'sdoc', require: false
 end
