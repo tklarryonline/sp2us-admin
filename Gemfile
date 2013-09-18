@@ -49,3 +49,9 @@ end
 
 # Use twitter-bootstrap
 gem 'bootstrap-sass-rails'
+
+# Use New Relic to monitor performance
+gem 'newrelic_rpm'
+
+# Use Haml for more awesome front end
+gem 'haml'
