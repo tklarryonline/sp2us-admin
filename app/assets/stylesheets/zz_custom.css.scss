@@ -14,6 +14,13 @@ $font_normal: 400;
 $font_semibold: 600;
 $font_bold: 700;
 
+/* Mixins */
+@mixin box_sizing {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /******************************************************************************
 /* Common stuff
 /*****************************************************************************/
@@ -107,11 +114,22 @@ footer {
     ul {
         float: right;
         list-style: none;
-        
+
         li {
             float: left;
             margin-left: 10px;
         }
     }
+}
+
+/*****************************************************************************/
+/* Miscellaneous
+/*****************************************************************************/
+.debug_dump {
+    clear: both;
+    float: left;
+    width: 100%;
+    margin-top: 45px;
+    @include box_sizing;
 }
 
