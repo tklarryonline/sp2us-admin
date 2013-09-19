@@ -21,6 +21,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'capybara'
   gem 'libnotify'
+  gem 'factory_girl_rails'
 end
 
 # Use SCSS for stylesheets
@@ -61,6 +62,10 @@ gem 'bootstrap-sass-rails'
 
 # Use Haml for more awesome front end
 gem 'haml'
+
+# Use Formtastic to make the form fantastic
+# gem 'formtastic', "~> 2.1.1"
+# gem 'formtastic-bootstrap'
 
 # Gems group for production env
 group :production do
