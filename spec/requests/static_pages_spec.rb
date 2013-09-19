@@ -9,52 +9,27 @@ describe "Static pages" do
 
     it { should have_content('Welcome') }
     it { should have_title(full_title('')) }
-
-    it "should have the content 'Sample App'" do
-      expect(page).to have_content('Welcome to Space++')
-    end
-
-    it "should have the right title" do
-      expect(page).to have_title("Space++ Management")
-      expect(page).not_to have_title("Home")
-    end
+    it { should_not have_title('Home') }
   end
 
   describe "Help page" do
     before { visit help_path }
 
-    it "should have the content 'Help'" do
-      expect(page).to have_content('Help')
-    end
-
-    it "should have the right title" do
-      expect(page).to have_title("Help")
-    end
+    it { should have_content('Help') }
+    it { should have_title(full_title('Help')) }
   end
 
-  describe "About page" do
+  describe "About Us page" do
+    before { visit about_path }
 
-    it "should have the content 'About Us'" do
-      visit about_path
-      expect(page).to have_content('About Us')
-    end
-
-    it "should have the right title" do
-      visit about_path
-      expect(page).to have_title("About Us")
-    end
+    it { should have_content('About Us') }
+    it { should have_title(full_title('About Us')) }
   end
 
   describe "Contact page" do
+    before { visit contact_path }
 
-    it "should have the content 'Contact'" do
-      visit contact_path
-      expect(page).to have_content('Contact')
-    end
-
-    it "should have the right title" do
-      visit contact_path
-      expect(page).to have_title("Contact")
-    end
+    it { should have_content('Contact') }
+    it { should have_title(full_title('Contact')) }
   end
 end
