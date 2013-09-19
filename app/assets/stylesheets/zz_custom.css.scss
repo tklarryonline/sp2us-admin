@@ -5,6 +5,8 @@
 $red_link: #cc0000;
 $red_darker: darken($red_link, 10%);
 $red_lighter: lighten($red_link, 10%);
+$grayLight: #999;
+$grayMediumLight: #eaeaea;
 
 /* Font weights */
 $font_light: 300;
@@ -68,6 +70,43 @@ textarea {
                     color: white;
                 }
             }
+        }
+    }
+}
+
+/*****************************************************************************/
+/* Footer
+/*****************************************************************************/
+footer {
+    margin-top: 45px;
+    padding-top: 5px;
+    border-top: 1px solid $grayMediumLight;
+    color: $grayLight;
+
+    a {
+        color: $red_link;
+
+        &:hover, &:active {
+            color: $red_darker;
+            background-color: transparent;
+        }
+
+        &:visited {
+            color: $red_darker;
+        }
+    }
+
+    small {
+        float: left;
+    }
+
+    ul {
+        float: right;
+        list-style: none;
+        
+        li {
+            float: left;
+            margin-left: 10px;
         }
     }
 }
