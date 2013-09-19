@@ -9,4 +9,5 @@ class User < ActiveRecord::Base
 
   def formatted_email
     "#{@name} <#{@email}>"
+  end
 end
