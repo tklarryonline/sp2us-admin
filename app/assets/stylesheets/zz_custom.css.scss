@@ -1,0 +1,74 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,vietnamese);
+@import "twitter/bootstrap";
+
+/* Colors */
+$red_link: #cc0000;
+$red_darker: darken($red_link, 10%);
+$red_lighter: lighten($red_link, 10%);
+
+/* Font weights */
+$font_light: 300;
+$font_normal: 400;
+$font_semibold: 600;
+$font_bold: 700;
+
+/******************************************************************************
+/* Common stuff
+/*****************************************************************************/
+html {
+    height: 100%;
+    font-size: 100%;
+}
+
+body {
+    padding-top: 60px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+@for $index from 1 through 6 {
+    h#{$index} {
+        font-family: 'Open Sans', sans-serif;
+        font-weight: $font_light;
+    }
+}
+
+textarea {
+    resize: vertical;
+}
+
+/*****************************************************************************/
+/* Header & Menu
+/*****************************************************************************/
+.sp-nav {
+    /*background-color: transparent;*/
+    text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+
+    .logo {
+        padding: 10px 15px;
+
+        img { width: 100px }
+    }
+
+    .nav.navbar-nav {
+
+        li {
+
+            a {
+                color: $red_link;
+                padding: 20px 0px 17px;
+                width: 98px;
+                text-align: center;
+                font-size: 110%;
+                @include transition(color 0.32s ease-out, border-bottom 0.25s ease-out);
+
+                &:hover, &:active {
+                    border-bottom: 3px solid white;
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
