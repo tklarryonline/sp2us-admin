@@ -62,14 +62,23 @@ a.btn:visited {
         li {
 
             a {
+                text-decoration: none;
                 color: $red_link;
                 padding: 20px 0px 17px;
-                width: 98px;
+                min-width: 98px;
                 text-align: center;
                 font-size: 110%;
                 @include transition(color 0.32s ease-out, border-bottom 0.25s ease-out);
 
                 &:hover, &:active {
+                    border-bottom: 3px solid white;
+                    color: white;
+                }
+            }
+            
+            &.current {
+
+                a {
                     border-bottom: 3px solid white;
                     color: white;
                 }

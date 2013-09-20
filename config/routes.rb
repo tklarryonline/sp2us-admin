@@ -1,4 +1,8 @@
 Sp2usMgmt::Application.routes.draw do
+  resources :rooms
+
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   get "users/new"
   root 'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
@@ -9,8 +13,6 @@ Sp2usMgmt::Application.routes.draw do
   resources :posts
 
   resources :users
-
-  resources :customers
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

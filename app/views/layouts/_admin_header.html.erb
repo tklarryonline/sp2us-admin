@@ -1,0 +1,13 @@
+<nav class="navbar navbar-inverse navbar-fixed-top sp-nav">
+  <div class="navbar-inner">
+    <%= link_to image_tag("logo_white.png", alt: "Space++"),
+      root_path, class: "logo pull-left" %>
+    <nav class="navbar-collapse collapse" role="navigation">
+      <%= admin_arbre_tag :global_navigation, current_menu,
+        :class => 'nav navbar-nav' %>
+      <%= admin_arbre_tag :global_navigation, 
+        active_admin_namespace.fetch_menu(:utility_navigation),
+        :id => "utility_nav", :class => 'nav navbar-nav navbar-right' %>
+    </nav>
+  </div>
+</nav>

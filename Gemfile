@@ -62,6 +62,9 @@ gem 'bootstrap-sass-rails'
 # Use Haml for more awesome front end
 gem 'haml'
 
+# Use Active Admin
+gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
+
 # Gems group for production env
 group :production do
   gem 'pg'
