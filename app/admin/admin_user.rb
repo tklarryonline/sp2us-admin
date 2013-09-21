@@ -1,4 +1,6 @@
 ActiveAdmin.register AdminUser, :as => "Managers" do
+  config.filters = false
+
   index do
     selectable_column
     column :email
@@ -7,8 +9,6 @@ ActiveAdmin.register AdminUser, :as => "Managers" do
     column :sign_in_count
     default_actions
   end
-
-  filter :email
 
   form do |f|
     f.inputs "Admin Details" do
