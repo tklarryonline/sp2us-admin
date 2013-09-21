@@ -9,10 +9,12 @@
   <%= render 'layouts/shim' %>
 </head>
 <body class="<%= admin_classes %>">
-<%= render 'layouts/admin_header' %>
+
+<%= render 'layouts/admin/header' %>
+
 <div id="wrapper">
 
-  <%= render 'layouts/admin_title_bar' %>
+  <%= render 'layouts/admin/title_bar' %>
   <%= admin_renderer(:build_flash_messages) %>
 
   <div id="active_admin_content"
@@ -21,7 +23,8 @@
     <%= admin_renderer(:build_sidebar) unless admin_renderer(:skip_sidebar?) %>
   </div>
 
-  <%= render 'layouts/admin_footer' %>
+  <%= render 'layouts/admin/footer' %>
 </div>
+
 </body>
 </html>
