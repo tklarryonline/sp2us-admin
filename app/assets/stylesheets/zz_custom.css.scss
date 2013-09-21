@@ -63,7 +63,7 @@ a.btn:visited {
 
             a {
                 text-decoration: none;
-                color: $red_link;
+                color: lighten($red_lighter, 15%);
                 padding: 20px 0px 17px;
                 min-width: 98px;
                 text-align: center;

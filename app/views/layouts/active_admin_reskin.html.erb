@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "active_admin", :media => "all" %>
-    <%= javascript_include_tag "active_admin" %>
-    <%= csrf_meta_tags %>
-    <%= render 'layouts/shim' %>
-  </head>
-  <body class="<%= admin_classes %>">
-    <%= render 'layouts/admin_header' %>
-    <div id="wrapper">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag "active_admin", :media => "all" %>
+  <%= javascript_include_tag "active_admin" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body class="<%= admin_classes %>">
+<%= render 'layouts/admin_header' %>
+<div id="wrapper">
 
-      <div class="title_bar" id="title_bar">
-        <div id="titlebar_left">
-          <%= admin_renderer(:build_breadcrumb, :title_bar) %>
-          <h2 id="page_title"><%= admin_renderer(:title) %><h2>
-            </h2>
-            <div id="titlebar_right">
-              <%= admin_arbre_tag(:action_items, admin_renderer(:action_items_for_action)) if admin_renderer(:action_items_for_action).any? %>
-            </div>
-          </h2>
+  <%= render 'layouts/admin_title_bar' %>
+  <%= admin_renderer(:build_flash_messages) %>
 
-          <%= admin_renderer(:build_flash_messages) %>
+  <div id="active_admin_content"
+       class="<%= admin_renderer(:skip_sidebar?) ? 'without_sidebar' : 'with_sidebar' %>">
+    <%= admin_renderer(:build_main_content_wrapper) %>
+    <%= admin_renderer(:build_sidebar) unless admin_renderer(:skip_sidebar?) %>
+  </div>
 
-          <div id="active_admin_content" class="<%= admin_renderer(:skip_sidebar?) ? 'without_sidebar' : 'with_sidebar' %>">
-            <%= admin_renderer(:build_main_content_wrapper) %>
-            <%= admin_renderer(:build_sidebar) unless admin_renderer(:skip_sidebar?) %>
-          </div>
-
-          <%= render 'layouts/admin_footer' %>
-        </div>
-      </div>
-    </div>
-  </body>
+  <%= render 'layouts/admin_footer' %>
+</div>
+</body>
 </html>

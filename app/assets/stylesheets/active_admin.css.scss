@@ -12,10 +12,39 @@
 @import "active_admin/base";
 
 // Using bootstrap
-@import "twitter/bootstrap";
 @import "zz_custom";
 
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+body {
+  font-size: 80%;
+}
+
+/***************************************************
+/* Header and Title
+/**************************************************/
+.active_admin {
+
+  .title_bar {
+
+    .breadcrumb {
+      padding: 0 4px;
+      margin-bottom: 5px;
+      background-color: transparent;
+    }
+  }
+}
+
+/***************************************************
+/* Header and Title
+/**************************************************/
+form fieldset ol > li label.label {
+  display: block;
+  padding: 0.9em 1em 0em;
+  font-size: 1.0em;
+  color: #5e6469;
+  text-align: left;
+  border-radius: none;
+}
