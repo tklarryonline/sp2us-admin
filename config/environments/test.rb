@@ -36,4 +36,6 @@ Sp2usMgmt::Application.configure do
 
   # Speed up tests by lowering bcrypt cost
   ActiveModel::SecurePassword.min_cost = true
+
+  config.action_mailer.default_url_options = { :host => "localhost"}
 end

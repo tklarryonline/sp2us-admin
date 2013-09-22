@@ -1,135 +1,129 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700&subset=latin,vietnamese);
-@import "twitter/bootstrap";
-
-/* Colors */
-$red_link: #cc0000;
-$red_darker: darken($red_link, 10%);
-$red_lighter: lighten($red_link, 10%);
-$grayLight: #999;
-$grayMediumLight: #eaeaea;
-
-/* Font weights */
-$font_light: 300;
-$font_normal: 400;
-$font_semibold: 600;
-$font_bold: 700;
-
-/* Mixins */
-@mixin box_sizing {
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-}
+@import "variables";
+@import "custom_functions";
 
 /******************************************************************************
 /* Common stuff
 /*****************************************************************************/
 html {
-    height: 100%;
-    font-size: 100%;
+  height: 100%;
+  font-size: 100%;
 }
 
 body {
-    padding-top: 60px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 100%;
-    -webkit-font-smoothing: antialiased;
+  padding-top: 60px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
 }
 
 @for $index from 1 through 6 {
-    h#{$index} {
-        font-family: 'Open Sans', sans-serif;
-        font-weight: $font_light;
-    }
+  h#{$index} {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: $font_light;
+  }
 }
 
 textarea {
-    resize: vertical;
+  resize: vertical;
 }
 
-a.btn:visited {
-    color: white;
+a.btn {
+  text-decoration: none;
+
+  &:visited {
+    color: white !important;
+  }
+
+}
+
+a.btn.btn-default:visited {
+  color: black !important;
 }
 
 /*****************************************************************************/
 /* Header & Menu
 /*****************************************************************************/
 .sp-nav {
-    /*background-color: transparent;*/
-    text-shadow: 0 -1px 0 rgba(0,0,0,.15);
+  /*background-color: transparent;*/
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .15);
 
-    .logo {
-        padding: 10px 15px;
+  .logo {
+    padding: 10px 15px;
 
-        img { width: 100px }
+    img {
+      width: 100px
     }
+  }
 
-    .nav.navbar-nav {
+  .nav.navbar-nav {
 
-        li {
+    li {
 
-            a {
-                color: $red_link;
-                padding: 20px 0px 17px;
-                width: 98px;
-                text-align: center;
-                font-size: 110%;
-                @include transition(color 0.32s ease-out, border-bottom 0.25s ease-out);
+      a {
+        text-decoration: none;
+        color: lighten($red_lighter, 15%);
+        padding: 20px 0px 17px;
+        min-width: 98px;
+        text-align: center;
+        font-size: 110%;
+        @include transition(color 0.32s ease-out, border-bottom 0.25s ease-out);
 
-                &:hover, &:active {
-                    border-bottom: 3px solid white;
-                    color: white;
-                }
-            }
+        &:hover, &:active {
+          border-bottom: 3px solid white;
+          color: white;
         }
+      }
     }
+  }
+
+  &.current {
+
+    a {
+      border-bottom: 3px solid white;
+      color: white;
+    }
+  }
 }
 
 /*****************************************************************************/
 /* Footer
 /*****************************************************************************/
 footer {
-    margin-top: 45px;
-    padding-top: 5px;
-    border-top: 1px solid $grayMediumLight;
-    color: $grayLight;
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid $grayMediumLight;
+  color: $grayLight;
 
-    a {
-        color: $red_link;
+  a {
+    color: $red_link;
 
-        &:hover, &:active {
-            color: $red_darker;
-            background-color: transparent;
-        }
-
-        &:visited {
-            color: $red_darker;
-        }
+    &:hover, &:active {
+      color: $red_darker;
+      background-color: transparent;
     }
 
-    small {
-        float: left;
+    &:visited {
+      color: $red_darker;
     }
+  }
 
-    ul {
-        float: right;
-        list-style: none;
-
-        li {
-            float: left;
-            margin-left: 10px;
-        }
-    }
-}
-
-/*****************************************************************************/
-/* Miscellaneous
-/*****************************************************************************/
-.debug_dump {
-    clear: both;
+  small {
     float: left;
-    width: 100%;
-    margin-top: 45px;
-    @include box_sizing;
+  }
+
+  small {
+    float: left;
+  }
+
+  ul {
+    float: right;
+    list-style: none;
+
+    li {
+      float: left;
+      margin-left: 10px;
+    }
+  }
 }
 

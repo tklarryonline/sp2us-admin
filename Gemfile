@@ -63,9 +63,8 @@ gem 'bootstrap-sass-rails'
 # Use Haml for more awesome front end
 gem 'haml'
 
-# Use Formtastic to make the form fantastic
-# gem 'formtastic', "~> 2.1.1"
-# gem 'formtastic-bootstrap'
+# Use Active Admin
+gem 'activeadmin', github: 'gregbell/active_admin', branch: 'rails4'
 
 # Gems group for production env
 group :production do

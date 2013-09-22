@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-type"/>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag "active_admin", :media => "all" %>
+  <%= javascript_include_tag "active_admin" %>
+  <%= csrf_meta_tags %>
+  <%= render 'layouts/shim' %>
+</head>
+<body class="<%= admin_classes %>">
+
+<%= render 'layouts/admin/header' %>
+
+<div id="wrapper">
+
+  <%= render 'layouts/admin/title_bar' %>
+  <%= admin_renderer(:build_flash_messages) %>
+
+  <div id="active_admin_content"
+       class="<%= admin_renderer(:skip_sidebar?) ? 'without_sidebar' : 'with_sidebar' %>">
+    <%= admin_renderer(:build_main_content_wrapper) %>
+    <%= admin_renderer(:build_sidebar) unless admin_renderer(:skip_sidebar?) %>
+  </div>
+
+  <%= render 'layouts/admin/footer' %>
+</div>
+
+</body>
+</html>
