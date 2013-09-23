@@ -90,6 +90,7 @@ a.btn.btn-default:visited {
 /* Footer
 /*****************************************************************************/
 footer {
+  font-size: 85%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid $grayMediumLight;
@@ -108,11 +109,7 @@ footer {
     }
   }
 
-  small {
-    float: left;
-  }
-
-  small {
+  span {
     float: left;
   }
 
@@ -127,3 +124,6 @@ footer {
   }
 }
 
+/*****************************************************************************/
+/* Miscellaneous
+/*****************************************************************************/
