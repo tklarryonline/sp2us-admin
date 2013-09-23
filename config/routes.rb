@@ -1,4 +1,6 @@
 Sp2usMgmt::Application.routes.draw do
+  resources :bookings
+
   resources :rooms
 
   devise_for :admin_users, ActiveAdmin::Devise.config
