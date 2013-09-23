@@ -20,6 +20,8 @@ ActiveAdmin.register Room do
     end
   end
 
+  form :partial => "form"
+
   controller do
     def permitted_params
       params.permit!
