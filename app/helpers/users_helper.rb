@@ -2,9 +2,8 @@ module UsersHelper
 
   # Returns Gravatar of given user
   def gravatar_for(user)
-    if not user.email
-      gravatar_id = 0
-    else
+    gravatar_id = 0
+    if user.email
       gravatar_id = Digest::MD5::hexdigest(user.email.downcase)
     end
     gravatar_size = 150
