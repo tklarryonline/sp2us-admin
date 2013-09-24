@@ -5,11 +5,3 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-Customer.delete_all
-
-Customer.create(
-	username: 'tklarryonline',
-	full_name: 'Nguyen Thanh Luan',
-	email_address: 'luan@tklarryonline.me',
-	image_url: 'luan.png'
-)

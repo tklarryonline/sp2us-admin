@@ -24,8 +24,8 @@ body {
   }
 }
 
-textarea {
-  resize: vertical;
+a, input.btn {
+  @include transition(all 0.25s ease-out);
 }
 
 a.btn {
@@ -39,6 +39,18 @@ a.btn {
 
 a.btn.btn-default:visited {
   color: black !important;
+}
+
+/*****************************************************************************/
+/* Forms
+/*****************************************************************************/
+
+textarea {
+  resize: vertical;
+}
+
+.flash_messages {
+  margin-top: 15px;
 }
 
 /*****************************************************************************/
@@ -74,14 +86,14 @@ a.btn.btn-default:visited {
           color: white;
         }
       }
-    }
-  }
 
-  &.current {
+      &.current {
 
-    a {
-      border-bottom: 3px solid white;
-      color: white;
+        a {
+          border-bottom: 3px solid white;
+          color: white;
+        }
+      }
     }
   }
 }
