@@ -6,6 +6,7 @@ ActiveAdmin.register User, :as => "Customers" do
     selectable_column
     column :name
     column :email
+    column :created_at
     column "" do |resource|
       links = ''.html_safe
       links += link_to "View", resource_path(resource), :class => "btn btn-default"
