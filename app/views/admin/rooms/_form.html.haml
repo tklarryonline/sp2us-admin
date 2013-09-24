@@ -1,9 +1,13 @@
-= semantic_form_for [:admin, @room],
-    html: {class: "form-horizontal", role: "form"} do |f|
-  = f.inputs "Room information" do
-    = f.input :name, label: "Room name ",
-                hint: "A nice name for our room, shall we?", required: true
-    = f.input :size, label: "Room size in m<sup>2</sup> ".html_safe, required: true
-    = f.input :price_per_hour, label: "Price/hour (US$) ", required: true
-    = f.input :description, input_html: {:rows => 10}
-  = f.actions
+.container
+  = semantic_form_for [:admin, @room], html: {class: "form-horizontal", role: "form"} do |f|
+    = f.semantic_errors
+    = f.inputs "Room information" do
+      = f.input :name, label: "Room name ", required: true,
+                input_html: {placeholder: "A nice name for our room"}
+      -#= f.input :size, label: "Room size in m<sup>2</sup> ".html_safe, required: true
+      = f.input :capacity, label: "Capacity<br/>(num. of people) ".html_safe, required: true,
+                input_html: {value: 1}
+      = f.input :price_per_hour, label: "Price/hour (US$) ", required: true,
+                input_html: {value: 1.0}
+      = f.input :description, input_html: {:rows => 10}, required: false
+    = f.actions

@@ -12,11 +12,11 @@ ActiveAdmin.register AdminUser, :as => "Managers" do
     column "" do |resource|
       links = ''.html_safe
       links += link_to "View", resource_path(resource), :class => "btn btn-default"
-      links += '&nbsp;'.html_safe
+      links += '&nbsp;&nbsp;'.html_safe
       links += link_to "Edit", edit_resource_path(resource), :class => "btn btn-primary"
-      links += '   '.html_safe
+      links += '&nbsp;&nbsp;'.html_safe
       links += link_to "Delete", resource_path(resource),
-                       :method => :delete, :confirm => "Are you sure to delete this?",
+                       :method => :delete, :confirm => "Are you sure you want to delete this?",
                        :class => "btn btn-danger"
     end
   end
