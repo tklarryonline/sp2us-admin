@@ -2,26 +2,20 @@ ActiveAdmin.register_page "Dashboard" do
 
   menu :priority => 1, :label => "Dashboard"
 
-  content :title => "Dashboard" do
+  content :title => "What's going on" do
 
-    # Here is an example of a simple dashboard with columns and panels.
-    #
-     columns do
-       column do
-         panel "Recently signed up" do
-           ul do
-             User.last(5).map do |user|
-               li link_to user.name, admin_customer_path(user)
-             end
-           end
-         end
-       end
+    columns do
+      column :span => 3 do
+        panel "Recently signed up" do
+          render partial: "recent_users"
+        end
+      end
 
-       column do
-         panel "Info" do
-           para "Welcome to ActiveAdmin."
-         end
-       end
-     end
+      column do
+        panel "Useful links for Managers" do
+          # TODO add useful links for Managers section here
+        end
+      end
+    end
   end # content
 end

@@ -1,0 +1,19 @@
+%em
+  %small Click on each row to go to corresponding customer
+%table.table.table-hover.table-bordered.recent_users_table
+  %thead
+    %tr
+      %th Name
+      %th Email
+      %th Created at
+  %tbody
+    - User.last(5).map do |user|
+      %tr{"data-link" => url_for(admin_customer_path(user))}
+        %td= user.name
+        %td= user.email
+        %td= user.created_at
+
+:javascript
+  $("tr[data-link]").click(function() {
+    window.location = $(this).data("link")
+  })

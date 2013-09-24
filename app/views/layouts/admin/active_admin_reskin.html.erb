@@ -15,7 +15,6 @@
 <div id="wrapper">
 
   <%= render 'layouts/admin/title_bar' %>
-  <%= admin_renderer(:build_flash_messages) %>
 
   <div id="active_admin_content"
        class="<%= admin_renderer(:skip_sidebar?) ? 'without_sidebar' : 'with_sidebar' %>">
